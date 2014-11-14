@@ -21,11 +21,11 @@
   $ bin/www
   #+END_SRC
 
-* Stuff TODO
-** TODO Cache feeds either in memory or a database (or both)
-** TODO Improve on the template to include some of the hackaday logos and links.
-** TODO Pullin the old hackaday html page to provide a true classic view.
-** TODO figure out if we can use black and white images like the really old school site.
+*** Stuff TODO
+**** TODO Cache feeds either in memory or a database (or both)
+**** TODO Improve on the template to include some of the hackaday logos and links.
+**** TODO Pullin the old hackaday html page to provide a true classic view.
+**** TODO figure out if we can use black and white images like the really old school site.
 
    
   
