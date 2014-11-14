@@ -9,6 +9,13 @@ var router = express.Router();
 var FeedParser = require('feedparser')
 var request = require('request');
 
+var DEBUG_ON = false;
+
+function DEBUG(){
+    if(DEBUG_ON == true){
+	console.log.apply(this,arguments);
+    }
+}
 
 function get_posts(res,page_id){
     var posts = []
@@ -28,6 +35,7 @@ function get_posts(res,page_id){
 
 
     feedparser.on('error', function(error) {
+	DEBUG(error);
 	// always handle errors
     });
     feedparser.on('readable', function() {
@@ -37,8 +45,8 @@ function get_posts(res,page_id){
 	, item;
 
 	while (item = stream.read()) {
-	    console.log(item);
-//	    console.log(item['rss:description']);
+	    
+	    DEBUG(item);
 	    posts.push(item) //['rss:description']);
 	}
     });
@@ -51,7 +59,8 @@ function get_posts(res,page_id){
 
 
 router.route('/:id').get(function(req, res) {
-    console.log("ID:", req.params.id);
+    DEBUG("hi");
+    DEBUG("ID:", req.params.id);
     get_posts(res,req.params.id);
   // res.render('index', { title: 'Express',posts:{} });
 });
