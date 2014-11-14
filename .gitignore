@@ -2,6 +2,10 @@
 logs
 *.log
 
+*#
+#*
+*~
+
 # Runtime data
 pids
 *.pid
