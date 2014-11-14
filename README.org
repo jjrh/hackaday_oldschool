@@ -1,0 +1,27 @@
+* Description
+  I like many others weren't really happy with the new redesign of the 
+  hackaday.com website.
+
+  While this isn't doing much other than being a RSS reader, almost the 
+  entire site is accessable with RSS. Making it rather simple to parse that
+  and create a website with any layout one wishes.
+
+* install instructions
+  Should just be:
+  #+BEGIN_SRC sh
+  $ npm install  
+  #+END_SRC
+
+  then run with either 
+  #+BEGIN_SRC sh
+  $ ./run.sh
+  #+END_SRC
+  OR
+  #+BEGIN_SRC sh
+  $ bin/www
+  #+END_SRC
+
+  
+  
+  
+  
