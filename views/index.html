@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block jitter_active %}active{% endblock %}
+{% block content %}
+
+  <!-- <a href="http://hackaday.com/" rel="home">
+  <img src="http://s0.wp.com/wp-content/themes/vip/hackaday-2/img/logo.png?m=1415779468g" alt="Logo" class="logo-img">
+  </a> -->
+
+{% for post in posts %}
+
+  <div class='row'>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<h3 class="panel-title">
+	  <div class="row">
+	    <div class="col-md-3">
+	      {{post['dc:creator']['#']}}
+	    </div>
+	    <div class="col-md-6"><a href="{{post['rss:link']['#']}}">{{post['rss:title']['#']}}</a></div>
+	    <div class="col-md-3">{{post['rss:pubdate']['#']}}</div>
+	  </div>
+
+	</h3>
+      </div>
+      <div class="panel-body">
+	{{post['content:encoded']['#']|safe}}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+<div>
+
+<div class='row'>
+  <div class="col-md-4"><a href="{{page_prev}}">prev</a></div>
+
+  <div class="col-md-4">hackaday.com</a></div>
+  <div class="col-md-4"><span style="float:right"><a href="{{page_next}}">next</a></span></div>
+
+</div>
+
+
+{% endblock %}
